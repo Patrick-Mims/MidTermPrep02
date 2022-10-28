@@ -9,16 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var food = ["food01", "food02", "food03", "food04", "food05"]
-    var description = ["item1", "item2", "item3", "item4", "item5"]
+    var description = ["Hamburger", "Pizza", "item3", "Crepes", "Sushi"]
     var price = ["12.99", "16.99", "21.99", "43.99", "22.99"]
     
     @State private var itemImg = "food01"
-    @State private var itemDesc = "Item 1"
-    @State private var itemPrice = "122.99"
+    @State private var itemDesc = "Hamburger"
+    @State private var itemPrice = "12.99"
     @State private var x = 1
     
     var body: some View {
-        Text("Hello, May I Take Your Order?")
+        Text("Hello, How May I Take Your Order?")
             .padding()
         ZStack {
             Color.orange.ignoresSafeArea()
@@ -27,9 +27,8 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
                     .padding()
-                Text(description[x])
-                    .padding()
-                Text(price[x])
+                Text(itemDesc)
+                Text(itemPrice)
                     .padding()
                 Button("Next Dish") {
                     if self.x < food.count {
@@ -42,6 +41,12 @@ struct ContentView: View {
                     }
                 }
                 .buttonStyle(.bordered)
+                .padding()
+                Button("Place an Order") {
+                        
+                }
+                .buttonStyle(.bordered)
+                .padding()
             }
         }
         .accentColor(Color.black)
