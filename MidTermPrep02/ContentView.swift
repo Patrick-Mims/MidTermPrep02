@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct OrderView: View {
+    
+    var item: String;
+    
+    var body: some View {
+        ZStack {
+            Color.blue
+            VStack {
+                Image("\(item)")
+            }
+        }
+    }
+}
+
 struct ContentView: View {
     var food = ["food01", "food02", "food03", "food04", "food05"]
     var description = ["Hamburger", "Pizza", "item3", "Crepes", "Sushi"]
@@ -16,6 +30,7 @@ struct ContentView: View {
     @State private var itemDesc = "Hamburger"
     @State private var itemPrice = "12.99"
     @State private var x = 1
+    @State private var isOrder = false
     
     var body: some View {
         Text("Hello, How May I Take Your Order?")
@@ -42,16 +57,11 @@ struct ContentView: View {
                 }
                 .buttonStyle(.bordered)
                 .padding()
-                Button("Place an Order") {
-                        
                 }
-                .buttonStyle(.bordered)
-                .padding()
             }
-        }
         .accentColor(Color.black)
+        }
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
